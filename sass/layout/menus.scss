@@ -1,6 +1,6 @@
 @use "../utils/variables";
 @use "../utils/colors";
-@use "../utils/linear-gradient.scss";
+@use "../utils/mixins";
 
 .menus {
     background-color: #f6f6f6;
@@ -40,30 +40,26 @@
         }
         @for $i from 1 through 4 {
             &__image-#{$i} {
-                background-image: url(../../assets/menu-#{$i}.jpg);
+                background-image: url(assets/menu-#{$i}.jpg);
             }
         }
         &__description {
             position: relative;
             background-color: white;
             border-radius: 0 0 1rem 1rem;
+            &::before {
+                @include mixins.heart;
+            }
+            &::after {
+                @include mixins.heart($opacity: 0, $font-weight: 900, $color: transparent );
+                @include mixins.gradient(1);
+            }
+            &:hover::after {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.1);
+            }
             h3, p {
                 padding-top: 0.3rem;
-            }
-            i {
-                font-size: 2rem;
-                position: absolute;
-                right: 1rem;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .fas {
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                opacity: 0;
-                transition: all 200ms;
-                @include linear-gradient.gradient(1);
             }
             &:hover .fas {
                 opacity: 1;
