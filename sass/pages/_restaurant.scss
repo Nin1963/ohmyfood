@@ -1,0 +1,87 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../utils/colors";
+
+body {
+    background-color: colors.$lightergrey;
+}
+
+#page-resto{
+    .banner img {
+        display: block;
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .resto-title {
+        padding: 0 1rem;
+        margin-top: -4rem;
+        h2 {
+            padding: 2rem 1rem;
+            font-family: "Shrikhand", cursive;
+            @include mixins.heart-animated;
+            border-radius: 2rem 2rem 0 0;
+            background-color: colors.$lightergrey;
+        }
+    }
+
+    .resto-main {
+        padding: 0 2rem;
+    }
+    .menus {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        @media (min-width: variables.$breakpoint) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        h3 {
+            font-weight: 400;
+        }
+    }
+
+    .menus__category {
+        background-color: white;
+        border-radius: 1rem;
+        .menu-item {
+            display: flex;
+            overflow: hidden;
+            border-radius: 1rem;
+            @include mixins.box-shadow;
+            .menu-item__description {
+                padding: 1rem;
+            }
+            .menu-item__price {
+                font-weight: 900;
+                align-self: end;
+                margin-left: auto;
+                padding: 1rem;
+            }
+            .menu-item__check {
+                display: grid;
+                place-items: center;
+                $button-width: 4rem;
+                border-radius: 0 1rem 1rem 0;
+                background-color: colors.$color-tertiary;
+                margin-right: -$button-width;
+                width: $button-width;
+                transition: margin-right 0.5s;
+                i {
+                    display: grid;
+                    place-items: center;
+                    background-color: white;
+                    aspect-ratio: 1;
+                    width: 2rem;
+                    border-radius: 1rem;
+                    color: colors.$color-tertiary;
+                }
+            }
+            &:hover .menu-item__check {
+                margin-right: 0;
+            }
+        }
+    }
+
+}

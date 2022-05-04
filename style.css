@@ -18,12 +18,14 @@ main {
   }
 }
 
-h2 {
-  padding: 2rem 0;
-  margin: 0;
-}
-
-h3, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
   margin: 0;
 }
 
@@ -125,24 +127,24 @@ header {
   font-size: 1.5rem;
 }
 
-.menus {
+#homepage .menus {
   background-color: #f6f6f6;
   margin-bottom: 2rem;
 }
-.menus .menus__cards {
+#homepage .menus .menus__cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
-@media (max-width: 1000px) {
-  .menus .menus__cards {
-    grid-template-columns: repeat(1, 1fr);
+@media (min-width: 1000px) {
+  #homepage .menus .menus__cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-.menus .menus__cards .new {
+#homepage .menus .menus__cards .new {
   position: relative;
 }
-.menus .menus__cards .new::before {
+#homepage .menus .menus__cards .new::before {
   content: "Nouveau";
   position: absolute;
   height: 2rem;
@@ -154,29 +156,30 @@ header {
   right: 1rem;
   top: 1rem;
 }
-.menus .card__image {
+#homepage .menus .card__image {
   height: 15rem;
   border-radius: 1rem 1rem 0 0;
   background-size: cover;
 }
-.menus .card__image-1 {
+#homepage .menus .card__image-1 {
   background-image: url(assets/menu-1.jpg);
 }
-.menus .card__image-2 {
+#homepage .menus .card__image-2 {
   background-image: url(assets/menu-2.jpg);
 }
-.menus .card__image-3 {
+#homepage .menus .card__image-3 {
   background-image: url(assets/menu-3.jpg);
 }
-.menus .card__image-4 {
+#homepage .menus .card__image-4 {
   background-image: url(assets/menu-4.jpg);
 }
-.menus .card__description {
+#homepage .menus .card__description {
+  padding: 1rem;
   position: relative;
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-.menus .card__description::before {
+#homepage .menus .card__description::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -196,7 +199,7 @@ header {
   opacity: 1;
   transition: all 200ms ease-in-out;
 }
-.menus .card__description::after {
+#homepage .menus .card__description::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -217,14 +220,14 @@ header {
   transition: all 200ms ease-in-out;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.menus .card__description:hover::after {
+#homepage .menus .card__description:hover::after {
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
-.menus .card__description h3, .menus .card__description p {
+#homepage .menus .card__description h3, #homepage .menus .card__description p {
   padding-top: 0.3rem;
 }
-.menus .card__description:hover .fas {
+#homepage .menus .card__description:hover .fas {
   opacity: 1;
   transform: translateY(-50%) scale(1.2);
 }
@@ -241,6 +244,541 @@ footer h2 {
 }
 footer p {
   padding: 0.2rem;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+#page-resto .banner img {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+#page-resto .resto-title {
+  padding: 0 1rem;
+  margin-top: -4rem;
+}
+#page-resto .resto-title h2 {
+  padding: 2rem 1rem;
+  font-family: "Shrikhand", cursive;
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+}
+#page-resto .resto-title h2::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: inherit;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+#page-resto .resto-title h2::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+}
+#page-resto .resto-title h2:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+#page-resto .resto-title h2 h3, #page-resto .resto-title h2 p {
+  padding-top: 0.3rem;
+}
+#page-resto .resto-title h2:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+#page-resto .resto-main {
+  padding: 0 2rem;
+}
+#page-resto .menus {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 1000px) {
+  #page-resto .menus {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#page-resto .menus h3 {
+  font-weight: 400;
+}
+#page-resto .menus__category {
+  background-color: white;
+  border-radius: 1rem;
+}
+#page-resto .menus__category .menu-item {
+  display: flex;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+#page-resto .menus__category .menu-item .menu-item__description {
+  padding: 1rem;
+}
+#page-resto .menus__category .menu-item .menu-item__price {
+  font-weight: 900;
+  align-self: end;
+  margin-left: auto;
+  padding: 1rem;
+}
+#page-resto .menus__category .menu-item .menu-item__check {
+  display: grid;
+  place-items: center;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #99E2D0;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+#page-resto .menus__category .menu-item .menu-item__check i {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  aspect-ratio: 1;
+  width: 2rem;
+  border-radius: 1rem;
+  color: #99E2D0;
+}
+#page-resto .menus__category .menu-item:hover .menu-item__check {
+  margin-right: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.load {
+  width: 10vh;
+  height: 5.5vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.load__bar {
+  height: 50%;
+  width: 1vh;
+  animation: bars 1000ms;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+.load--1 {
+  animation-delay: 8ms;
+}
+.load--2 {
+  animation-delay: 16ms;
+}
+.load--3 {
+  animation-delay: 24ms;
+}
+.load--4 {
+  animation-delay: 32ms;
+}
+.load--5 {
+  animation-delay: 40ms;
+}
+.load--6 {
+  animation-delay: 48ms;
+}
+.load--7 {
+  animation-delay: 56ms;
+}
+.load--8 {
+  animation-delay: 64ms;
+}
+.load--9 {
+  animation-delay: 72ms;
+}
+.load--10 {
+  animation-delay: 80ms;
+}
+.load--11 {
+  animation-delay: 88ms;
+}
+.load--12 {
+  animation-delay: 96ms;
+}
+.load--13 {
+  animation-delay: 104ms;
+}
+.load--14 {
+  animation-delay: 112ms;
+}
+.load--15 {
+  animation-delay: 120ms;
+}
+.load--16 {
+  animation-delay: 128ms;
+}
+.load--17 {
+  animation-delay: 136ms;
+}
+.load--18 {
+  animation-delay: 144ms;
+}
+.load--19 {
+  animation-delay: 152ms;
+}
+.load--20 {
+  animation-delay: 160ms;
+}
+.load--21 {
+  animation-delay: 168ms;
+}
+.load--22 {
+  animation-delay: 176ms;
+}
+.load--23 {
+  animation-delay: 184ms;
+}
+.load--24 {
+  animation-delay: 192ms;
+}
+.load--25 {
+  animation-delay: 200ms;
+}
+.load--26 {
+  animation-delay: 208ms;
+}
+.load--27 {
+  animation-delay: 216ms;
+}
+.load--28 {
+  animation-delay: 224ms;
+}
+.load--29 {
+  animation-delay: 232ms;
+}
+.load--30 {
+  animation-delay: 240ms;
+}
+.load--31 {
+  animation-delay: 248ms;
+}
+.load--32 {
+  animation-delay: 256ms;
+}
+.load--33 {
+  animation-delay: 264ms;
+}
+.load--34 {
+  animation-delay: 272ms;
+}
+.load--35 {
+  animation-delay: 280ms;
+}
+.load--36 {
+  animation-delay: 288ms;
+}
+.load--37 {
+  animation-delay: 296ms;
+}
+.load--38 {
+  animation-delay: 304ms;
+}
+.load--39 {
+  animation-delay: 312ms;
+}
+.load--40 {
+  animation-delay: 320ms;
+}
+.load--41 {
+  animation-delay: 328ms;
+}
+.load--42 {
+  animation-delay: 336ms;
+}
+.load--43 {
+  animation-delay: 344ms;
+}
+.load--44 {
+  animation-delay: 352ms;
+}
+.load--45 {
+  animation-delay: 360ms;
+}
+.load--46 {
+  animation-delay: 368ms;
+}
+.load--47 {
+  animation-delay: 376ms;
+}
+.load--48 {
+  animation-delay: 384ms;
+}
+.load--49 {
+  animation-delay: 392ms;
+}
+.load--50 {
+  animation-delay: 400ms;
+}
+.load--51 {
+  animation-delay: 408ms;
+}
+.load--52 {
+  animation-delay: 416ms;
+}
+.load--53 {
+  animation-delay: 424ms;
+}
+.load--54 {
+  animation-delay: 432ms;
+}
+.load--55 {
+  animation-delay: 440ms;
+}
+.load--56 {
+  animation-delay: 448ms;
+}
+.load--57 {
+  animation-delay: 456ms;
+}
+.load--58 {
+  animation-delay: 464ms;
+}
+.load--59 {
+  animation-delay: 472ms;
+}
+.load--60 {
+  animation-delay: 480ms;
+}
+.load--61 {
+  animation-delay: 488ms;
+}
+.load--62 {
+  animation-delay: 496ms;
+}
+.load--63 {
+  animation-delay: 504ms;
+}
+.load--64 {
+  animation-delay: 512ms;
+}
+.load--65 {
+  animation-delay: 520ms;
+}
+.load--66 {
+  animation-delay: 528ms;
+}
+.load--67 {
+  animation-delay: 536ms;
+}
+.load--68 {
+  animation-delay: 544ms;
+}
+.load--69 {
+  animation-delay: 552ms;
+}
+.load--70 {
+  animation-delay: 560ms;
+}
+.load--71 {
+  animation-delay: 568ms;
+}
+.load--72 {
+  animation-delay: 576ms;
+}
+.load--73 {
+  animation-delay: 584ms;
+}
+.load--74 {
+  animation-delay: 592ms;
+}
+.load--75 {
+  animation-delay: 600ms;
+}
+.load--76 {
+  animation-delay: 608ms;
+}
+.load--77 {
+  animation-delay: 616ms;
+}
+.load--78 {
+  animation-delay: 624ms;
+}
+.load--79 {
+  animation-delay: 632ms;
+}
+.load--80 {
+  animation-delay: 640ms;
+}
+.load--81 {
+  animation-delay: 648ms;
+}
+.load--82 {
+  animation-delay: 656ms;
+}
+.load--83 {
+  animation-delay: 664ms;
+}
+.load--84 {
+  animation-delay: 672ms;
+}
+.load--85 {
+  animation-delay: 680ms;
+}
+.load--86 {
+  animation-delay: 688ms;
+}
+.load--87 {
+  animation-delay: 696ms;
+}
+.load--88 {
+  animation-delay: 704ms;
+}
+.load--89 {
+  animation-delay: 712ms;
+}
+.load--90 {
+  animation-delay: 720ms;
+}
+.load--91 {
+  animation-delay: 728ms;
+}
+.load--92 {
+  animation-delay: 736ms;
+}
+.load--93 {
+  animation-delay: 744ms;
+}
+.load--94 {
+  animation-delay: 752ms;
+}
+.load--95 {
+  animation-delay: 760ms;
+}
+.load--96 {
+  animation-delay: 768ms;
+}
+.load--97 {
+  animation-delay: 776ms;
+}
+.load--98 {
+  animation-delay: 784ms;
+}
+.load--99 {
+  animation-delay: 792ms;
+}
+.load--100 {
+  animation-delay: 800ms;
+}
+.load--101 {
+  animation-delay: 808ms;
+}
+.load--102 {
+  animation-delay: 816ms;
+}
+.load--103 {
+  animation-delay: 824ms;
+}
+.load--104 {
+  animation-delay: 832ms;
+}
+.load--105 {
+  animation-delay: 840ms;
+}
+.load--106 {
+  animation-delay: 848ms;
+}
+.load--107 {
+  animation-delay: 856ms;
+}
+.load--108 {
+  animation-delay: 864ms;
+}
+.load--109 {
+  animation-delay: 872ms;
+}
+.load--110 {
+  animation-delay: 880ms;
+}
+.load--111 {
+  animation-delay: 888ms;
+}
+.load--112 {
+  animation-delay: 896ms;
+}
+.load--113 {
+  animation-delay: 904ms;
+}
+.load--114 {
+  animation-delay: 912ms;
+}
+.load--115 {
+  animation-delay: 920ms;
+}
+.load--116 {
+  animation-delay: 928ms;
+}
+.load--117 {
+  animation-delay: 936ms;
+}
+.load--118 {
+  animation-delay: 944ms;
+}
+.load--119 {
+  animation-delay: 952ms;
+}
+.load--120 {
+  animation-delay: 960ms;
+}
+.load--121 {
+  animation-delay: 968ms;
+}
+.load--122 {
+  animation-delay: 976ms;
+}
+.load--123 {
+  animation-delay: 984ms;
+}
+.load--124 {
+  animation-delay: 992ms;
+}
+.load--125 {
+  animation-delay: 1000ms;
+}
+
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

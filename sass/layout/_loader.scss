@@ -1,0 +1,39 @@
+@use "../utils/colors";
+@use "../utils/mixins";
+
+$size: 1vh;
+$anim-dur: 1000ms;
+$num-bars: 125;
+$anim-delay: $anim-dur / $num-bars;
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.load {
+    width: $size*10;
+    height: $size*5.5;
+    display: flex;
+    justify-content: space-evenly;
+    &__bar {
+        height: 50%;
+        width: $size;
+        animation: bars $anim-dur;
+        @include mixins.gradient;
+    }
+    @for $i from 1 through $num-bars {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i;
+         }
+    }
+}
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}

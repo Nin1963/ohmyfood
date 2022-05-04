@@ -4,7 +4,8 @@
   "description": "Projet3 OpenClassrooms OhMyFood",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch style.scss style.css"
+    "sass": "sass --watch style.scss style.css",
+    "prefix": "postcss style.css --use autoprefixer -d prefixed/"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,6 @@
   "homepage": "https://github.com/Nin1963/ohmyfood#readme",
   "devDependencies": {
     "sass": "^1.50.1"
-  }
+  },
+  "browserslist":"last 4 versions"
 }
