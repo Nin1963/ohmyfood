@@ -19,7 +19,7 @@ $anim-delay: $anim-dur / $num-bars;
     &__bar {
         height: 50%;
         width: $size;
-        animation: bars $anim-dur;
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
         @include mixins.gradient;
     }
     @for $i from 1 through $num-bars {

@@ -1,6 +1,7 @@
 @use "../utils/mixins";
 @use "../utils/variables";
 @use "../utils/colors";
+@use "../utils/animation";
 
 body {
     background-color: colors.$lightergrey;
@@ -28,8 +29,9 @@ body {
     }
 
     .resto-main {
-        padding: 0 2rem;
+        // padding: 0 2rem;
     }
+
     .menus {
         display: grid;
         grid-template-columns: 1fr;
@@ -39,19 +41,38 @@ body {
         }
         h3 {
             font-weight: 400;
+            padding-left: 2rem;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                height: 0.25rem;
+                width: 3rem;
+                top: 2rem;
+                left: 2rem;
+                background-color: colors.$color-tertiary;
+            }
         }
     }
 
     .menus__category {
-        background-color: white;
-        border-radius: 1rem;
+        overflow: hidden;
         .menu-item {
             display: flex;
             overflow: hidden;
+            background-color: white;
             border-radius: 1rem;
+            margin: 2rem;
+            cursor: pointer;
             @include mixins.box-shadow;
             .menu-item__description {
                 padding: 1rem;
+                overflow: hidden;
+                h4, p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
             }
             .menu-item__price {
                 font-weight: 900;
@@ -61,6 +82,7 @@ body {
             }
             .menu-item__check {
                 display: grid;
+                flex-shrink: 0;
                 place-items: center;
                 $button-width: 4rem;
                 border-radius: 0 1rem 1rem 0;
@@ -78,10 +100,16 @@ body {
                     color: colors.$color-tertiary;
                 }
             }
-            &:hover .menu-item__check {
-                margin-right: 0;
+            &:hover {
+                .menu-item__check {
+                    margin-right: 0;
+                }
+                i {
+                    @include animation.quarterspin;
+                    animation: quarter-spin 0.5s ease-in-out;
+                }
+                    
             }
         }
     }
-
 }
