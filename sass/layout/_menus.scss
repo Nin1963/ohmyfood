@@ -6,7 +6,10 @@
 
     .menus {
         background-color: colors.$lightergrey;
-    margin-bottom: 2rem;
+        padding: 0 1.25rem 3rem 1.25rem;
+        h2 {
+            margin-bottom: 1rem;
+        }
         .menus__cards {
             display: grid;
             grid-template-columns: 1fr;

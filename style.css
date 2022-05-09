@@ -5,18 +5,8 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   font-family: "Roboto", sans-serif;
-}
-
-main {
-  padding: 0 7rem;
-}
-@media (max-width: 1000px) {
-  main {
-    padding: 0 1rem;
-    padding-top: 2.5rem;
-  }
 }
 
 h1,
@@ -60,6 +50,7 @@ header {
 .explorer {
   text-align: center;
   background-color: #f6f6f6;
+  padding: 3rem;
 }
 .explorer h2 {
   font-size: 2rem;
@@ -84,30 +75,32 @@ header {
   opacity: 0.9;
 }
 
-.tuto {
+.fonctionnement {
   counter-reset: steps;
   margin-bottom: 2rem;
   margin-top: 4rem;
+  padding: 0 1.25rem;
 }
-.tuto ol {
+.fonctionnement ol {
   display: flex;
   gap: 2rem;
+  padding-left: 1rem;
 }
 @media (max-width: 1000px) {
-  .tuto ol {
+  .fonctionnement ol {
     flex-direction: column;
   }
 }
-.tuto li {
+.fonctionnement li {
   position: relative;
   list-style: none;
   background-color: #f6f6f6;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
   flex-grow: 1;
   border-radius: 1rem;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
-.tuto li::before {
+.fonctionnement li::before {
   content: "" counter(steps);
   counter-increment: steps;
   background-color: #9356dc;
@@ -121,18 +114,25 @@ header {
   transform: translateY(-50%);
   left: -1rem;
 }
-.tuto li:hover {
-  transform: scale(1.02);
-}
-.tuto li i.fas {
-  margin-right: 1rem;
+.fonctionnement li i.fas {
+  margin: 0 1rem;
   color: #7e7e7e;
   font-size: 1.5rem;
+}
+.fonctionnement li:hover {
+  background-color: #f5edff;
+  transform: scale(1.02);
+}
+.fonctionnement li:hover i.fas {
+  color: #9356dc;
 }
 
 #homepage .menus {
   background-color: #f6f6f6;
-  margin-bottom: 2rem;
+  padding: 0 1.25rem 3rem 1.25rem;
+}
+#homepage .menus h2 {
+  margin-bottom: 1rem;
 }
 #homepage .menus .menus__cards {
   display: grid;
@@ -249,10 +249,6 @@ footer p {
   padding: 0.2rem;
 }
 
-body {
-  background-color: #f6f6f6;
-}
-
 #page-resto .banner img {
   display: block;
   width: 100%;
@@ -325,6 +321,9 @@ body {
   opacity: 1;
   transform: translateY(-50%) scale(1.2);
 }
+#page-resto .resto-main {
+  background-color: #f6f6f6;
+}
 #page-resto .menus {
   display: grid;
   grid-template-columns: 1fr;
@@ -394,6 +393,7 @@ body {
   width: 2rem;
   border-radius: 1rem;
   color: #99E2D0;
+  font-size: 1.5rem;
 }
 #page-resto .menus__category .menu-item:hover .menu-item__check {
   margin-right: 0;

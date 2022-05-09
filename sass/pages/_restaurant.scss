@@ -4,7 +4,7 @@
 @use "../utils/animation";
 
 body {
-    background-color: colors.$lightergrey;
+    // background-color: colors.$lightergrey;
 }
 
 #page-resto{
@@ -29,7 +29,7 @@ body {
     }
 
     .resto-main {
-        // padding: 0 2rem;
+        background-color: colors.$lightergrey;
     }
 
     .menus {
@@ -98,6 +98,7 @@ body {
                     width: 2rem;
                     border-radius: 1rem;
                     color: colors.$color-tertiary;
+                    font-size: 1.5rem;
                 }
             }
             &:hover {
