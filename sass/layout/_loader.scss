@@ -1,31 +1,39 @@
 @use "../utils/colors";
 @use "../utils/mixins";
 
-$size: 1vh;
-$anim-dur: 1000ms;
-$num-bars: 25;
-$anim-delay: $anim-dur / $num-bars;
-
-.container {
+.loader{
+    $animation-duration: 5s;
+    position:fixed;
     display: flex;
     justify-content: center;
-}
-
-.load {
-    width: $size*10;
-    height: $size*5.5;
-    display: flex;
-    justify-content: space-evenly;
-    &__bar {
-        height: 50%;
-        width: $size;
-        animation: bars $anim-dur backwards infinite ease-in-out alternate;
-        @include mixins.gradient;
-    }
-    @for $i from 1 through $num-bars {
-        &--#{$i} {
-            animation-delay: $anim-delay * $i;
-         }
+    align-items: center;
+    background-color: #fff;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 300ms $animation-duration forwards;
+    
+    .load {
+        $size: 1vh;
+        $anim-dur: 1000ms;
+        $num-bars: 25;
+        $anim-delay: $anim-dur / $num-bars;
+        width: $size*10;
+        height: $size*20;
+        display: flex;
+        justify-content: space-evenly;
+        &__bar {
+            height: 50%;
+            width: $size;
+            animation: bars $anim-dur backwards infinite ease-in-out alternate;
+            @include mixins.gradient;
+        }
+        @for $i from 1 through $num-bars {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+        }
     }
 }
 
@@ -35,5 +43,11 @@ $anim-delay: $anim-dur / $num-bars;
     }
     100% {
         transform: scaleY(1.0);
+    }
+}
+
+@keyframes disappear {
+    to {
+        opacity: 0;
     }
 }

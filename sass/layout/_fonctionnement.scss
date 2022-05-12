@@ -4,9 +4,12 @@
 
 .fonctionnement {
     counter-reset: steps;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
+    margin: 4rem 0 4rem 0;
     padding: 0 1.25rem;
+
+    h2 {
+        padding-bottom: 1rem;
+    }
 
     & ol {
         display: flex;
@@ -46,13 +49,11 @@
         }
         &:hover {
             background-color: colors.$pink;
-            @include mixins.transform-zoom;
             & i.fas {
                 color: colors.$purple;
             }
-            
+            @include mixins.transform-zoom;
         }
-        
     }
 }
 
