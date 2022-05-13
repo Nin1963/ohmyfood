@@ -29,9 +29,18 @@ header {
   position: relative;
   font-family: "Shrikhand", cursive;
   text-align: center;
-  padding: 0.3rem;
+  padding: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   margin: 0;
+}
+header a {
+  position: absolute;
+  display: flex;
+  left: 2rem;
+  top: 1.5rem;
+}
+header .fa-arrow-left {
+  align-self: flex-start;
 }
 
 .city {
@@ -45,6 +54,11 @@ header {
 }
 .city i {
   font-size: 1.5rem;
+}
+
+button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .explorer {
@@ -66,14 +80,10 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  transform: all 200ms;
+  transition: all 200ms;
   margin-top: 1rem;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-}
-.explorer button:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
 }
 
 .fonctionnement {
@@ -264,7 +274,6 @@ footer p {
   object-position: center;
 }
 #page-resto .resto-title {
-  padding: 0 1rem;
   margin-top: -4rem;
 }
 #page-resto .resto-title h2 {
@@ -416,6 +425,23 @@ footer p {
     transform: rotate(0);
   }
 }
+#page-resto .order {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 0 0 5rem 0;
+}
+#page-resto .order button {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  transition: all 200ms;
+  margin-top: 1rem;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
 
 .loader {
   position: fixed;
@@ -427,7 +453,7 @@ footer p {
   inset: 0;
   z-index: 1;
   opacity: 0.9;
-  animation: disappear 300ms 5s forwards;
+  animation: disappear 300ms 3s forwards;
 }
 .loader .load {
   width: 10vh;
@@ -528,6 +554,7 @@ footer p {
 @keyframes disappear {
   to {
     opacity: 0;
+    z-index: -1;
   }
 }
 

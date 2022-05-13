@@ -2,7 +2,7 @@
 @use "../utils/mixins";
 
 .loader{
-    $animation-duration: 5s;
+    $animation-duration: 3s;
     position:fixed;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
         $size: 1vh;
         $anim-dur: 1000ms;
         $num-bars: 25;
-        $anim-delay: $anim-dur / $num-bars;
+        $anim-delay: calc($anim-dur / $num-bars);
         width: $size*10;
         height: $size*20;
         display: flex;
@@ -49,5 +49,6 @@
 @keyframes disappear {
     to {
         opacity: 0;
+        z-index: -1;
     }
 }

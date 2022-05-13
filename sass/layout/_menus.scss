@@ -4,13 +4,13 @@
 
 #homepage {
 
-    .menus {
+    & .menus {
         background-color: colors.$lightergrey;
         padding: 0 1.25rem 4rem 1.25rem;
-        h2 {
+        & h2 {
             padding: 3rem 0 1rem 0;
         }
-        .menus__cards {
+        & .menus__cards {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
@@ -18,11 +18,11 @@
             @media (min-width: variables.$breakpoint) {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .new {
+            & .new {
                 position: relative;
             }
             
-            .new::before {
+            & .new::before {
                 content: "Nouveau";
                 position: absolute;
                 height: 2rem;
@@ -36,7 +36,7 @@
             }
         }
         
-        .card {
+        & .card {
             &__image {
                 height: 15rem;
                 border-radius: 1rem 1rem 0 0;
