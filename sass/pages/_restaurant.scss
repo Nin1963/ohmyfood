@@ -57,6 +57,12 @@ body {
     .menus__category {
         overflow: hidden;
         .menu-item {
+            $numberOfItems: 3;
+            @for $i from 1 through $numberOfItems {
+              &:nth-child(#{$i}) {
+                animation-delay: 100ms * $i;
+              }
+            }
             display: flex;
             overflow: hidden;
             background-color: white;
@@ -64,6 +70,8 @@ body {
             margin: 2rem;
             cursor: pointer;
             @include mixins.box-shadow;
+            animation: appear 1s;
+            animation-fill-mode: both;
             .menu-item__description {
                 padding: 1rem;
                 overflow: hidden;
