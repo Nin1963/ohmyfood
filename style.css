@@ -397,6 +397,9 @@ footer p {
 #page-resto .menus__category .menu-item:nth-child(3) {
   animation-delay: 300ms;
 }
+#page-resto .menus__category .menu-item:nth-child(4) {
+  animation-delay: 400ms;
+}
 #page-resto .menus__category .menu-item .menu-item__description {
   padding: 1rem;
   overflow: hidden;
@@ -426,7 +429,7 @@ footer p {
   display: grid;
   place-items: center;
   background-color: white;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   width: 2rem;
   border-radius: 1rem;
   color: #99E2D0;

@@ -3,10 +3,6 @@
 @use "../utils/colors";
 @use "../utils/animation";
 
-body {
-    // background-color: colors.$lightergrey;
-}
-
 #page-resto{
     .banner img {
         display: block;
@@ -57,7 +53,7 @@ body {
     .menus__category {
         overflow: hidden;
         .menu-item {
-            $numberOfItems: 3;
+            $numberOfItems: 4;
             @for $i from 1 through $numberOfItems {
               &:nth-child(#{$i}) {
                 animation-delay: 100ms * $i;
@@ -101,7 +97,7 @@ body {
                     display: grid;
                     place-items: center;
                     background-color: white;
-                    aspect-ratio: 1;
+                    aspect-ratio: 1 / 1;
                     width: 2rem;
                     border-radius: 1rem;
                     color: colors.$color-tertiary;
