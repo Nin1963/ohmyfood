@@ -8,3 +8,5 @@ https://openclassrooms.com/fr/paths/556/projects/637/assignment
 
 Technologies used: HTML, CSS, SCSS, animations, keyframes, mixins, npm scripts PostCSS, Autoprefixer, CSSNano
 
+[![Screenshot-2022-05-17-at-10-49-39-Oh-my-Food.png](https://i.postimg.cc/GhZTdZmB/Screenshot-2022-05-17-at-10-49-39-Oh-my-Food.png)](https://postimg.cc/MvmpY3Rx)
+
