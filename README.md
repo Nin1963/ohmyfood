@@ -1,5 +1,5 @@
 ---
-#OhMyFood
+# OhMyFood
 
 This is the third project of OpenClassrooms
 
