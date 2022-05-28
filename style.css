@@ -116,8 +116,8 @@ button:hover {
 .fonctionnement li::before {
   content: "" counter(steps);
   counter-increment: steps;
+  color: white;
   background-color: #9356dc;
-  color: #fff;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
