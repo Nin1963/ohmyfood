@@ -117,6 +117,7 @@ button:hover {
   content: "" counter(steps);
   counter-increment: steps;
   background-color: #9356dc;
+  color: #fff;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;

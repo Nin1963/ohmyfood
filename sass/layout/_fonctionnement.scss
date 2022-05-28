@@ -26,6 +26,7 @@
             content: "" counter(steps);
             counter-increment: steps;
             background-color: colors.$purple ;
+            color:#fff;
             width: 2 * variables.$tuto-bullet-height;
             height: 2 * variables.$tuto-bullet-height;
             border-radius: 50%;
